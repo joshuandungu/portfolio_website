@@ -1,78 +1,121 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Github, ExternalLink } from 'lucide-react';
 
-import { AboutPreview } from '@/components/home/about-preview';
-import { ContactPreview } from '@/components/home/contact-preview';
-import { HeroSection } from '@/components/home/hero-section';
-import { ProjectsPreview } from '@/components/home/projects-preview';
-import { SkillsPreview } from '@/components/home/skills-preview';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import { projects, siteConfig } from '@/lib/constants';
+import { staggerContainer, fadeInScale } from '@/lib/motion';
 
-export default function Home() {
-	const [isLoading, setIsLoading] = useState(true);
-
-	useEffect(() => {
-		// Simulate loading time
-		const timer = setTimeout(() => setIsLoading(false), 2000);
-
-		return () => clearTimeout(timer);
-	}, []);
-
+export default function ProjectsPage() {
 	return (
-		<>
-		<AnimatePresence>
-		{ isLoading && (
+		<div className= "py-16 md:py-24" >
+		<div className="container" >
 			<motion.div
-						className= "fixed inset-0 z-50 flex items-center justify-center bg-background"
-	initial = {{ opacity: 1 }
-}
-exit = {{ opacity: 0 }}
-transition = {{ duration: 0.5 }}
-					>
-	<motion.div
-							className="flex flex-col items-center"
-initial = {{ opacity: 0, y: 20 }}
-animate = {{ opacity: 1, y: 0 }}
-transition = {{ duration: 0.5 }}
-						>
-	<motion.div
-								className="w-16 h-16 border-t-4 border-primary border-solid rounded-full"
-animate = {{ rotate: 360 }}
-transition = {{
-	repeat: Infinity,
-		duration: 1,
-			ease: 'linear',
-								}}
-							/>
-	< motion.p
-className = "mt-4 text-lg"
-animate = {{
-	opacity: [0.5, 1, 0.5],
-								}}
-transition = {{
-	repeat: Infinity,
-		duration: 1.5,
-								}}
-							>
-	Loading...
-</motion.p>
-	</motion.div>
-	</motion.div>
-				)}
-</AnimatePresence>
+					variants={ staggerContainer() }
+	initial = "hidden"
+	animate = "show"
+		>
+		<motion.div
+						variants={ fadeInScale(0.2) }
+	className = "text-center mb-12"
+		>
+		<h1 className="text-4xl font-bold mb-4" > Projects </h1>
+			< p className = "text-lg text-muted-foreground max-w-2xl mx-auto" >
+				A showcase of my engineering projects, demonstrating practical application
+							of skills and innovative problem - solving.
+						</p>
+		</motion.div>
 
-{
-	!isLoading && (
-		<>
-		<HeroSection />
-		< AboutPreview />
-		<ProjectsPreview />
-		< SkillsPreview />
-		<ContactPreview />
-		</>
-	)
+		< div className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" >
+		{
+			projects.map((project, index) => (
+				<motion.div
+								key= { project.title }
+								variants = { fadeInScale(index * 0.1) }
+								className = "flex"
+				>
+				<Card className="flex flex-col h-full card-gradient" >
+			<div className="relative h-48 w-full" >
+			<Image
+											src={ project.image }
+											alt = { project.title }
+											fill
+											className = "object-cover rounded-t-lg"
+											sizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+				/>
+				</div>
+				< CardContent className = "flex-grow p-6" >
+				<h3 className="font-bold text-xl mb-2" > { project.title } </h3>
+			< p className = "text-muted-foreground mb-4" >
+			{ project.description }
+			</p>
+			< div className = "flex flex-wrap gap-2" >
+			{
+				project.tags.map((tag, tagIndex) => (
+					<Badge key= { tagIndex } variant = "secondary" >
+					{ tag }
+					</Badge>
+				))
+		}
+			</div>
+			</CardContent>
+			< CardFooter className = "p-6 pt-0 gap-2" >
+			{
+				project.link && (
+					<Button size="sm" variant = "outline" asChild>
+				<Link
+													href={ project.link }
+	target = "_blank"
+	rel = "noreferrer"
+		>
+		<ExternalLink className="h-4 w-4 mr-2" />
+			Demo
+			</Link>
+			</Button>
+										)
 }
-</>
+{
+	project.repo && (
+		<Button size="sm" variant = "outline" asChild >
+			<Link
+													href={ project.repo }
+	target = "_blank"
+	rel = "noreferrer"
+		>
+		<Github className="h-4 w-4 mr-2" />
+			Repo
+			</Link>
+			</Button>
+										)
+}
+</CardFooter>
+	</Card>
+	</motion.div>
+						))}
+</div>
+
+	< motion.div
+variants = { fadeInScale(projects.length * 0.1) }
+className = "flex justify-center mt-12"
+	>
+	<Button size="lg" asChild >
+		<Link
+								href={ siteConfig.links.github }
+target = "_blank"
+rel = "noreferrer"
+	>
+	<Github className="mr-2 h-5 w-5" />
+		View All on GitHub
+			</Link>
+			</Button>
+			</motion.div>
+			</motion.div>
+			</div>
+			</div>
 	);
 }
