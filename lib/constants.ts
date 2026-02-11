@@ -42,7 +42,7 @@ export const siteConfig = {
 		},
 	],
 	links: {
-		github: 'https://github.com/yourusername',
+		github: 'https://github.com/joshuandungu',
 		linkedin: 'https://linkedin.com/in/yourusername',
 		twitter: 'https://twitter.com/yourusername',
 		facebook: 'https://facebook.com/yourusername',

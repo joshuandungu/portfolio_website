@@ -51,13 +51,11 @@ export default function ProjectsPage() {
 				</div>
 				< CardContent className = "flex-grow p-6" >
 				<h3 className="font-bold text-xl mb-2" > { project.title } </h3>
-			< p className = "text-muted-foreground mb-4" >
-			{ project.description }
-			</p>
+			< p className = "text-muted-foreground mb-4" > { project.description } </p>
 			< div className = "flex flex-wrap gap-2" >
 			{
-				project.tags.map((tag, tagIndex) => (
-					<Badge key= { tagIndex } variant = "secondary" >
+				project.tags.map((tag) => (
+					<Badge key= { tag } variant = "secondary" >
 					{ tag }
 					</Badge>
 				))
@@ -68,29 +66,21 @@ export default function ProjectsPage() {
 			{
 				project.link && (
 					<Button size="sm" variant = "outline" asChild>
-				<Link
-													href={ project.link }
-	target = "_blank"
-	rel = "noreferrer"
-		>
-		<ExternalLink className="h-4 w-4 mr-2" />
-			Demo
-			</Link>
-			</Button>
+				<Link href={ project.link } target = "_blank" rel = "noreferrer" >
+					<ExternalLink className="h-4 w-4 mr-2" />
+						Demo
+						</Link>
+						</Button>
 										)
 }
 {
 	project.repo && (
 		<Button size="sm" variant = "outline" asChild >
-			<Link
-													href={ project.repo }
-	target = "_blank"
-	rel = "noreferrer"
-		>
-		<Github className="h-4 w-4 mr-2" />
-			Repo
-			</Link>
-			</Button>
+			<Link href={ project.repo } target = "_blank" rel = "noreferrer" >
+				<Github className="h-4 w-4 mr-2" />
+					Repo
+					</Link>
+					</Button>
 										)
 }
 </CardFooter>
@@ -104,18 +94,14 @@ variants = { fadeInScale(projects.length * 0.1) }
 className = "flex justify-center mt-12"
 	>
 	<Button size="lg" asChild >
-		<Link
-								href={ siteConfig.links.github }
-target = "_blank"
-rel = "noreferrer"
-	>
-	<Github className="mr-2 h-5 w-5" />
-		View All on GitHub
-			</Link>
-			</Button>
-			</motion.div>
-			</motion.div>
-			</div>
-			</div>
+		<Link href={ siteConfig.links.github } target = "_blank" rel = "noreferrer" >
+			<Github className="mr-2 h-5 w-5" />
+				View All on GitHub
+					</Link>
+					</Button>
+					</motion.div>
+					</motion.div>
+					</div>
+					</div>
 	);
 }
