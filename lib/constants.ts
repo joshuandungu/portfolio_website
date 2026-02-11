@@ -42,7 +42,7 @@ export const siteConfig = {
 		},
 	],
 	links: {
-		github: 'https://github.com/joshuandungu',
+		github: 'https://github.com/yourusername',
 		linkedin: 'https://linkedin.com/in/yourusername',
 		twitter: 'https://twitter.com/yourusername',
 		facebook: 'https://facebook.com/yourusername',
@@ -64,18 +64,6 @@ export type Experience = {
 };
 
 export const experiences: Experience[] = [
-	{
-		title: 'Modern WiFi Configuration and Installation',
-		company: 'Softlife Networks',
-		location: 'Kenya',
-		startDate: '2026',
-		endDate: 'Ongoing',
-		description: [
-			'Engaged in the configuration and installation of modern WiFi networks.',
-			'Provided network solutions and support for various clients.',
-		],
-		technologies: ['Network Configuration', 'Wireless Installation', 'Troubleshooting'],
-	},
 	{
 		title: 'Engineering Intern',
 		company: 'Tech Company',
@@ -114,74 +102,6 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-	{
-		title: 'Video Lending Platform',
-		description: 'Created a video lending platform using React and Node.js.',
-		image: 'https://images.pexels.com/photos/1117132/pexels-photo-1117132.jpeg',
-		tags: ['React', 'Node.js', 'Video Lending'],
-		link: '#',
-		repo: '#',
-	},
-	{
-		title: 'Product Price Comparison Website',
-		description: 'Created a product price comparison website using React, Tailwind CSS, and Node.js.',
-		image: 'https://images.pexels.com/photos/3944405/pexels-photo-3944405.jpeg',
-		tags: ['React', 'Tailwind CSS', 'Node.js', 'Ecommerce'],
-		link: '#',
-		repo: '#',
-	},
-	{
-		title: 'Weather Website',
-		description: 'Created a weather website using React to display current weather conditions.',
-		image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg',
-		tags: ['React', 'Weather', 'API'],
-		link: '#',
-		repo: '#',
-	},
-	{
-		title: 'Photographer Locator Website',
-		description: 'Created a photographer locator website using HTML, CSS, JavaScript, and PHP.',
-		image: 'https://images.pexels.com/photos/3062545/pexels-photo-3062545.jpeg',
-		tags: ['HTML', 'CSS', 'JavaScript', 'PHP'],
-		link: '#',
-		repo: '#',
-	},
-	{
-		title: 'Online Car Spare Shop',
-		description:
-			'Developed an online car spare shop for spare shops to market and sell for free using HTML, CSS, JavaScript, and PHP.',
-		image: 'https://images.pexels.com/photos/4489749/pexels-photo-4489749.jpeg',
-		tags: ['HTML', 'CSS', 'JavaScript', 'PHP'],
-		link: '#',
-		repo: '#',
-	},
-	{
-		title: 'Entertainment Hub',
-		description:
-			'Developed a free-to-use entertainment website for searching and watching TV channels and the latest movies.',
-		image: 'https://images.pexels.com/photos/7988079/pexels-photo-7988079.jpeg',
-		tags: ['Streaming', 'TV', 'Movies', 'Web Development'],
-		link: '#',
-		repo: 'https://github.com/joshuandungu/movies-master.git',
-	},
-	{
-		title: 'Online Gas Order and Delivery App',
-		description:
-			'Final year software project: An online gas ordering and delivery application built using Flutter for frontend and Node.js for backend, integrated with payment services like M-Pesa and Google Pay.',
-		image: 'https://images.pexels.com/photos/1092644/pexels-photo-1092644.jpeg',
-		tags: ['Flutter', 'Node.js', 'M-Pesa', 'Google Pay'],
-		link: '#',
-		repo: 'https://github.com/joshuandungu/GAS_ECCOMERCE_APPLICATION-main.git',
-	},
-	{
-		title: 'Campus Multi-vendor Ecommerce',
-		description:
-			'Built a multi-vendor online ecommerce website with React for campus students to buy and sell with ease. Integrated with M-Pesa for online payments.',
-		image: 'https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg',
-		tags: ['React', 'M-Pesa', 'Ecommerce', 'Web Development'],
-		link: '#',
-		repo: 'https://github.com/joshuandungu/Multi_Vendor_Shop.git',
-	},
 	{
 		title: 'Smart Home Automation System',
 		description:
@@ -224,29 +144,32 @@ export type Education = {
 
 export const education: Education[] = [
 	{
-		degree: 'Bachelor of Science in Software Engineering',
-		field: 'Software Engineering',
-		institution: 'University of Eastern African, Baraton',
-		location: 'Baraton, Kenya',
-		startDate: '2021',
-		endDate: '2025',
-		gpa: '3.3/4.0 (Second Class Upper)',
+		degree: 'Bachelor of Science',
+		field: 'Mechanical Engineering',
+		institution: 'University Name',
+		location: 'City, Country',
+		startDate: 'Sep 2020',
+		endDate: 'Present',
+		gpa: '3.8/4.0',
 		achievements: [
-			'ALX Software Engineering Certification',
-			'BITSA Hackathon Participant',
-			'Engaged in University Computer Clinic and Repair',
-			'Provided Graphic Design services for school and clients',
+			'Dean\'s List (All Semesters)',
+			'Academic Excellence Scholarship',
+			'Senior Design Project Award',
 		],
 	},
 	{
-		degree: 'KCSE',
-		field: 'High School Education',
-		institution: 'Nyandarua High School',
-		location: 'Nyandarua, Kenya',
-		startDate: '2016',
-		endDate: '2019',
-		gpa: 'B (Plain)',
-		achievements: ['Achieved a mean grade of B (Plain) in the Kenya Certificate of Secondary Education.'],
+		degree: 'High School Diploma',
+		field: 'Science and Mathematics',
+		institution: 'High School Name',
+		location: 'City, Country',
+		startDate: 'Sep 2016',
+		endDate: 'Jun 2020',
+		gpa: '4.0/4.0',
+		achievements: [
+			'Valedictorian',
+			'National Mathematics Competition Finalist',
+			'Science Fair Gold Medal',
+		],
 	},
 ];
 
@@ -260,14 +183,6 @@ export type Certificate = {
 };
 
 export const certificates: Certificate[] = [
-	{
-		title: 'ALX Software Engineering',
-		issuer: 'ALX Africa',
-		date: '2024',
-		id: 'ALX-SE-CERT',
-		url: '#',
-		pdf: '#',
-	},
 	{
 		title: 'Engineering Professional Certification',
 		issuer: 'Professional Engineering Association',
@@ -343,7 +258,7 @@ export const blogPosts: BlogPost[] = [
 		title: 'Advances in Renewable Energy Technologies',
 		excerpt: 'Exploring the latest innovations in renewable energy and their impact on sustainable development.',
 		date: 'Mar 15, 2024',
-		author: 'Joshua Gatehi Ndung\'u',
+		author: 'Your Name',
 		image: 'https://images.pexels.com/photos/2800832/pexels-photo-2800832.jpeg',
 		slug: 'advances-in-renewable-energy',
 	},
@@ -351,7 +266,7 @@ export const blogPosts: BlogPost[] = [
 		title: 'The Future of Robotics in Manufacturing',
 		excerpt: 'How robotics and automation are revolutionizing the manufacturing industry and creating new opportunities.',
 		date: 'Feb 22, 2024',
-		author: 'Joshua Gatehi Ndung\'u',
+		author: 'Your Name',
 		image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg',
 		slug: 'future-of-robotics-manufacturing',
 	},
@@ -359,7 +274,7 @@ export const blogPosts: BlogPost[] = [
 		title: 'Sustainable Building Materials in Modern Construction',
 		excerpt: 'An analysis of eco-friendly building materials and their applications in contemporary architecture.',
 		date: 'Jan 10, 2024',
-		author: 'Joshua Gatehi Ndung\'u',
+		author: 'Your Name',
 		image: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg',
 		slug: 'sustainable-building-materials',
 	},

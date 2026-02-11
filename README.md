@@ -1,4 +1,4 @@
-
+<div align="center">
 
 # 🚀 Engineering Student Portfolio
 
@@ -153,10 +153,10 @@ npm run dev
 | 🔧 **Component** | 📍 **Location** | 🎯 **Purpose** |
 |:---|:---|:---|
 | **Personal Info** | `app/page.tsx` | Update your details and bio |
-| **Project Data** | `lib/constants.ts` | Add/edit your project details |
+| **Project Gallery** | `components/Projects.tsx` | Showcase your engineering projects |
 | **Styling Theme** | `tailwind.config.ts` | Customize colors and design |
 | **Static Assets** | `public/` | Replace with your images/icons |
-| **Contact Form** | `app/contact/page.tsx` | Configure contact form behavior |
+| **Contact Form** | `components/Contact.tsx` | Configure contact information |
 
 </div>
 
@@ -226,8 +226,8 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 <div align="center">
 
-### **Joshua Gatehi Ndung'u**
-*Software Engineering Student*
+### **Niladri Chatterjee**
+*Full Stack Developer & Engineering Student*
 
 <br>
 
